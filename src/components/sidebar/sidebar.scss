@@ -33,6 +33,11 @@
         align-items: center;
     }
 
+    .highlighted {
+        background-color: white;
+        color: black;
+    }
+
     .texts {
         display: flex;
         flex-direction: column;

@@ -1,10 +1,10 @@
-.container {
+.info-container {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .card {
+    .info-card {
         display: flex;
         padding: 1rem;
         -webkit-box-shadow: 1px 3px 15px 5px #CCC; 
@@ -13,10 +13,10 @@
         width: 55rem;
     }
 
-    .content {
+    .info-content {
         margin-left: 8rem;
 
-        .header-wrapper {
+        .info-header-wrapper {
             margin-top: 2.5rem;
             display: flex;
             flex-direction: column;

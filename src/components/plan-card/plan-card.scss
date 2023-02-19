@@ -1,0 +1,27 @@
+.plan-card-main {
+    width: 6rem;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 1rem;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+
+    .plan-card-text {
+        font-weight: 600;
+    }
+
+    .plan-card-price {
+        color: rgba(128, 128, 128, 0.536);
+        font-weight: 500;
+        font-size: 11px;
+    }
+}
+
+.plan-selected {
+    background-color: #eee;
+}

@@ -3,18 +3,22 @@ import "./info.scss";
 import Sidebar from "../../components/sidebar/sidebar";
 import { Formik, Field, Form } from "formik";
 import { InfoFormValidation } from "./info.validation";
+import { useNavigate } from "react-router-dom";
 
 const Info = () => {
+  const navigate = useNavigate();
+
   const handleFormSubmit = async (values) => {
     await new Promise((r) => setTimeout(r, 500));
-    alert(JSON.stringify(values, null, 2));
+    console.log(JSON.stringify(values, null, 2));
+    navigate("/plan");
   };
   return (
-    <div className="container">
-      <div className="card">
-        <Sidebar />
-        <div className="content">
-          <div className="header-wrapper">
+    <div className="info-container">
+      <div className="info-card">
+        <Sidebar selectedTab="info" />
+        <div className="info-content">
+          <div className="info-header-wrapper">
             <div className="info-header">Personal info</div>
             <div className="info-desc">
               Please provide your name, email address, and phone number
@@ -65,7 +69,11 @@ const Info = () => {
                 <button className="submit-button" type="submit">
                   Next Step
                 </button>
-                <button className="go-back-button" type="button">
+                <button
+                  className="go-back-button"
+                  type="button"
+                  onClick={() => navigate(-1)}
+                >
                   Go Back
                 </button>
               </Form>
