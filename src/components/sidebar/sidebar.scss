@@ -1,0 +1,54 @@
+.main-sidebar {
+    background-image: url('../../assets/images/bg-sidebar-desktop.svg');
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.7rem;
+    height: 35rem;
+    width: 17rem;
+
+    .sidebar-content-wrapper {
+        margin-top: 3rem;
+        height: 15rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.main {
+    display: flex;
+    width: 12rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    .icon {
+        border: 1px solid white;
+        color: white;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .texts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+        width: 7rem;
+
+        .top-text {
+            color: gray;
+            font-size: 12px;
+        }
+
+        .bottom-text {
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+        }
+    }
+}
