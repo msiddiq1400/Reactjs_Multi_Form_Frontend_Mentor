@@ -2,6 +2,7 @@ import React from "react";
 import "./info.scss";
 import Sidebar from "../../components/sidebar/sidebar";
 import { Formik, Field, Form } from "formik";
+import { InfoFormValidation } from "./info.validation";
 
 const Info = () => {
   const handleFormSubmit = async (values) => {
@@ -21,48 +22,54 @@ const Info = () => {
           </div>
           <Formik
             initialValues={{
-              firstName: "",
-              lastName: "",
+              name: "",
               email: "",
+              phoneNumber: "",
             }}
+            validationSchema={InfoFormValidation}
             onSubmit={(values) => handleFormSubmit(values)}
           >
-            <Form className="info-form">
-              <div className="info-form-data">
-                <div className="info-field">
-                  <label htmlFor="firstName">Name</label>
-                  <Field
-                    id="firstName"
-                    name="firstName"
-                    placeholder="Vanessa Mint"
-                  />
-                </div>
+            {({ errors, touched }) => (
+              <Form className="info-form">
+                <div className="info-form-data">
+                  <div className="info-field">
+                    <label htmlFor="name">Name</label>
+                    <Field name="name" placeholder="Vanessa Mint" />
+                    {errors.name && touched.name ? (
+                      <div className="form-error">{errors.name}</div>
+                    ) : null}
+                  </div>
 
-                <div className="info-field">
-                  <label htmlFor="email">Email Address</label>
-                  <Field
-                    id="email"
-                    name="email"
-                    placeholder="jane@acme.com"
-                    type="email"
-                  />
+                  <div className="info-field">
+                    <label htmlFor="email">Email Address</label>
+                    <Field
+                      name="email"
+                      placeholder="jane@acme.com"
+                      type="email"
+                    />
+                    {errors.email && touched.email ? (
+                      <div className="form-error">{errors.email}</div>
+                    ) : null}
+                  </div>
+                  <div className="info-field">
+                    <label htmlFor="phoneNumber">Phone Number</label>
+                    <Field
+                      name="phoneNumber"
+                      placeholder="e.g. + 1 234 567 890"
+                    />
+                    {errors.phoneNumber && touched.phoneNumber ? (
+                      <div className="form-error">{errors.phoneNumber}</div>
+                    ) : null}
+                  </div>
                 </div>
-                <div className="info-field">
-                  <label htmlFor="firstName">Phone Number</label>
-                  <Field
-                    id="firstName"
-                    name="firstName"
-                    placeholder="e.g. + 1 234 567 890"
-                  />
-                </div>
-              </div>
-              <button className="submit-button" type="submit">
-                Next Step
-              </button>
-              <button className="go-back-button" type="button">
-                Go Back
-              </button>
-            </Form>
+                <button className="submit-button" type="submit">
+                  Next Step
+                </button>
+                <button className="go-back-button" type="button">
+                  Go Back
+                </button>
+              </Form>
+            )}
           </Formik>
         </div>
       </div>
