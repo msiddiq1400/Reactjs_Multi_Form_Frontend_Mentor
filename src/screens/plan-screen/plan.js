@@ -6,6 +6,13 @@ import PlanCard from "../../components/plan-card/plan-card";
 import ArcadeIcon from "../../assets/images/icon-arcade.svg";
 import AdvancedIcon from "../../assets/images/icon-advanced.svg";
 import ProIcon from "../../assets/images/icon-pro.svg";
+import { Switch } from "@mui/material";
+
+const switchStyle = {
+  "& .MuiSwitch-track": {
+    backgroundColor: "red",
+  },
+};
 
 const getCheckedPlan = (val) => {
   switch (val) {
@@ -29,6 +36,11 @@ const initialState = {
 const Plans = () => {
   const navigate = useNavigate();
   const [plan, setSelectedPlan] = useState(initialState);
+  const [toggleSwitch, setToggleSwitch] = useState(false);
+
+  const handleToggleSwitch = () => {
+    setToggleSwitch((prev) => !prev);
+  };
 
   const handlePlanClick = (selected) => {
     console.log("clicked");
@@ -73,7 +85,15 @@ const Plans = () => {
               />
             </div>
           </div>
-          <div className="plan-billing"></div>
+          <div className="plan-billing">
+            <p className={!toggleSwitch ? "plan-billing-bold" : ""}>Monthly</p>
+            <Switch
+              checked={toggleSwitch}
+              onChange={handleToggleSwitch}
+              sx={switchStyle}
+            />
+            <p className={toggleSwitch ? "plan-billing-bold" : ""}>Yearly</p>
+          </div>
           <div className="button-container">
             <button className="submit-button" type="submit">
               Next Step
