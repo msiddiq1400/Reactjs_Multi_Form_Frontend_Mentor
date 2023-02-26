@@ -43,7 +43,6 @@ const Plans = () => {
   };
 
   const handlePlanClick = (selected) => {
-    console.log("clicked");
     setSelectedPlan({ ...initialState, ...getCheckedPlan(selected) });
     console.log(plan);
   };
@@ -95,7 +94,11 @@ const Plans = () => {
             <p className={toggleSwitch ? "plan-billing-bold" : ""}>Yearly</p>
           </div>
           <div className="button-container">
-            <button className="submit-button" type="submit">
+            <button
+              className="submit-button"
+              type="button"
+              onClick={() => navigate("/addons")}
+            >
               Next Step
             </button>
             <button

@@ -1,0 +1,63 @@
+.addon-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .addon-card {
+        display: flex;
+        padding: 1rem;
+        -webkit-box-shadow: 1px 3px 15px 5px #CCC; 
+        box-shadow: 1px 3px 15px 5px #CCC;
+        border-radius: 0.5rem;
+        width: 55rem;
+
+        .addon-content {
+            margin-left: 8rem;
+            .addon-header-wrapper {
+                margin-top: 2.5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .addon-header {
+                    font-size: 2rem;
+                    font-weight: bold;
+                    padding: 0;
+                    margin: 0;
+                }
+
+                .addon-desc {
+                    margin-top: 0.5rem;
+                    color: gray;
+                }
+            }
+
+            position: relative;
+            .submit-button {
+                padding: 0.5rem 1rem;
+                background-color: rgb(39, 39, 227);
+                color: white;
+                border-radius: 0.4rem;
+                position: absolute;
+                right: 0;
+                bottom: 5rem;
+            }
+
+            .go-back-button {
+                padding: 0.5rem 1rem;
+                position: absolute;
+                left: 0;
+                bottom: 5rem;
+                border: none;
+                background: transparent;
+            }
+
+            .addon-options {
+                margin-top: 2rem;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}

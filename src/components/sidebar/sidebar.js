@@ -10,7 +10,7 @@ const checkWhichTabToHighlight = (selectedTab) => {
       return { highlightedPlan: true };
     case "addon":
       return { highlightedAddons: true };
-    case "summary":
+    case "finishing":
       return { highlightedSummary: true };
     default:
       return;
