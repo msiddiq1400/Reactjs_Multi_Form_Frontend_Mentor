@@ -16,13 +16,35 @@ const Finishing = () => {
               Double-check everything looks OK before confirming
             </div>
           </div>
+          <div className="finising-summary">
+            <div className="row">
+              <div className="row-1">
+                <div>Arcade (Yearly)</div>
+                <div>Change</div>
+              </div>
+              <div>$90/yr</div>
+            </div>
+            <div className="divider"></div>
+            <div className="row">
+              <div>Online service</div>
+              <div>+$10/yr</div>
+            </div>
+            <div className="row">
+              <div>Larger storage</div>
+              <div>+20/yr</div>
+            </div>
+          </div>
+          <div className="finishing-total">
+            <div>Online service</div>
+            <div>+$10/yr</div>
+          </div>
           <div className="button-container">
             <button
               className="submit-button"
               type="button"
               onClick={() => navigate("/finishing")}
             >
-              Next Step
+              Confirm
             </button>
             <button
               className="go-back-button"

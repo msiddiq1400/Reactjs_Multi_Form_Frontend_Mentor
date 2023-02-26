@@ -7,12 +7,43 @@
     .finishing-card {
         display: flex;
         padding: 1rem;
-        -webkit-box-shadow: 1px 3px 15px 5px #CCC; 
-        box-shadow: 1px 3px 15px 5px #CCC;
         border-radius: 0.5rem;
         width: 55rem;
 
         .finishing-content {
+
+            .finishing-total {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 1rem;
+                padding: 0rem 2rem;
+            }
+
+            .finising-summary {
+                background-color: rgb(238, 238, 238);
+                border-radius: 0.3rem;
+                margin-top: 2rem;
+                display: flex;
+                flex-direction: column;
+                padding: 1.2rem 1.4rem;
+                height: 7rem;
+                justify-content: space-between;
+
+                .row {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .row-1 {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+
+                .divider {
+                    border-bottom: 1px solid black;
+                }
+            }
+
             margin-left: 8rem;
             .finishing-header-wrapper {
                 margin-top: 2.5rem;
